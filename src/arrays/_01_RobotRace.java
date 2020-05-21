@@ -31,9 +31,12 @@ while (!finish) {
 
 for (int i = 0; i < rs.length; i++) {
 	int ran = r.nextInt(50);
+	int ran2 = r.nextInt(20);
 	rs[i].move(ran);
-	if (rs[i].getY() <= 0) {
+	rs[i].turn(ran2);
+	if (rs[i].getY() >= 600) {
 		finish = true;
+		System.out.println("Robot " + (i + 1) + " won.(Throws Party)");
 		break;
 	}
 }
